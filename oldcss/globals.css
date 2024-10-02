@@ -1,0 +1,16 @@
+html, body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Ensure the body takes full height */
+}
+
+.navbar {
+    width: 100%; /* Make navbar full width */
+    padding: 1rem 2rem; /* Add left and right padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.logo a {
+    color: white; /* Ensure text color is white */
+    text-decoration: none; /* Remove underline from links */
+}

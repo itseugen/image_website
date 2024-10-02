@@ -1,0 +1,49 @@
+/* components/Navbar.module.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #05193f;
+    color: white;
+	font-family: 'Fredoka', sans-serif;
+	border-bottom: 3px solid #2692b0;
+	background: linear-gradient(135deg, #05193f, #17657b);
+    position: sticky;
+    top: 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	z-index: 10000;
+}
+
+.upload-button {
+    display: flex; /* Ensure button and input align properly */
+    align-items: center; /* Center align items */
+}
+
+.upload-button button {
+    background-color: #007bff; /* Blue color for the button */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Ensure padding is appropriate */
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px; /* Space between input and button */
+}
+
+.upload-button button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.logo {
+    font-size: 2rem; /* Adjust this value to make "Home" bigger */
+    font-family: 'Fredoka', sans-serif; /* Use your chosen font */
+}
+
+.sticky {
+    background-color: rgba(5, 25, 63, 1); /* Darker on scroll */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}

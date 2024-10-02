@@ -1,0 +1,45 @@
+/* ImageUpload.module.css */
+
+.dropZone {
+    width: 300px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.uploadButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.uploadButton:hover {
+    background-color: #0056b3;
+}
+
+.dropZone {
+    width: 300px; /* Set your desired width */
+    height: 120px; /* Set your desired height */
+    border: 2px dashed #007bff;
+    text-align: center;
+    padding: 20px;
+    margin: auto; /* Center the box */
+    background-color: #05193f; /* Optional: Add a background color */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    transition: background-color 0.3s ease; /* Optional: Add a transition */
+}
+
+.dropZone:hover {
+    background-color: #0a3484; /* Change background color on hover */
+}
