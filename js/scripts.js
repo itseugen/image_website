@@ -1,28 +1,25 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-	const imageContainer = document.querySelector('.image-container');
+    const imageContainer = document.querySelector(".image-container");
 
-	// Function to fetch and display images
-	async function loadImages() {
-			try {
-				const response = await fetch('/usrimg'); // Adjust this path to your server setup
-				const images = await response.json(); // Assuming your server returns a JSON array of image filenames
+    // Fetch the directory listing from the server
+    fetch('/usrimg/')
+        .then(response => response.text())
+        .then(html => {
+            // Use a temporary DOM element to parse the HTML
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
 
-				images.forEach(image => {
-				const imageWrapper = document.createElement('div');
-				imageWrapper.className = 'imageWrapper';
-				
-				const imgElement = document.createElement('img');
-				imgElement.src = `/usrimg/${image}`; // Adjust path as necessary
-				imgElement.alt = image; // Set alt attribute for accessibility
-				imageWrapper.appendChild(imgElement);
-				imageContainer.appendChild(imageWrapper);
-			});
-		}
-		catch (error) {
-			console.error('Error loading images:', error);
-		}
-	}
+            // Extract the filenames from the listing
+            const fileNames = Array.from(tempDiv.querySelectorAll('body')).map(el => el.innerText.trim());
 
-	loadImages();
+            // Append each image to the image container
+            fileNames.forEach(file => {
+                const img = document.createElement('img');
+                img.src = `/usrimg/${file}`;
+                img.alt = "User uploaded image";
+                img.classList.add("gallery-image");
+                imageContainer.appendChild(img);
+            });
+        })
+        .catch(error => console.error('Error fetching images:', error));
 });
