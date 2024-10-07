@@ -39,7 +39,7 @@ body {
 }
 
 .upload-button {
-	background-color: #007bff;; /* Green */
+	background-color: #05193f;; /* Green */
 	border: none;
 	color: white;
 	padding: 10px 20px;
@@ -52,32 +52,38 @@ body {
 }
 
 .upload-button:hover {
-	background-color: #0056b3; /* Darker green */
+	background-color: #2692b0;
 }
 
-/* .image-container {
-	padding: 20px;
-	background-color: white;
-	border-radius: 8px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	max-height: 80vh;
-	overflow-y: auto;
-} */
-
 .image-container {
-	width: 100%;
-	height: auto;
+	/* align-self: center; */
+	display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center;
+}
+
+.image-wrapper {
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	max-width: 40vw;
+	max-height: 96%;
+	overflow: hidden;
+	background-color: #05193f;
 	padding: 5px;
 	border: 6px solid #2692b0;
 	border-radius: 10px;
-	background-color: #05193f;
 	display: flex;
-	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	align-self: center;
 }
 
-/* .imageWrapper img {
-	width: 100%;
+.image-box {
+	width: 40vw; /* Set the size of each image */
 	height: auto;
-	aspect-ratio: 4 / 3;
-} */
+	border-radius: 8px;
+}
