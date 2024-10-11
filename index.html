@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="fonts/fonts.css">
-	<title>Navigation Bar</title>
+	<title>Image site</title>
 </head>
 <body>
 	<nav class="navbar">
@@ -48,7 +48,7 @@
 					const imageWrapper = document.createElement('div');
 					imageWrapper.classList.add('image-wrapper'); // Add a class for styling
 					const img = document.createElement('img');
-					img.src = folderUrl + link.getAttribute('href');
+					img.src = link.getAttribute('href');
 					img.alt = 'Image';
 					img.classList.add('image-box');
 
