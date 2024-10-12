@@ -77,7 +77,7 @@ uploadButton.addEventListener('click', async () => {
 	const len = 240 - selectedFile.name.length;
 	if (len > 0) {
 		const randomString = generateRandomString(len);
-		newFileName = randomString + '-' + selectedFile.name;
+		newFileName = randomString + '-' + selectedFile.name.replace(/ /g, '%20');
 	}
 	else {
 		newFileName = selectedFile.name;
