@@ -25,14 +25,50 @@ async function fetchImages() {
 			img.alt = 'Image';
 			img.classList.add('image-box');
 
+
+			const deleteButton = document.createElement('button');
+			deleteButton.className = 'deleteButton';
+			deleteButton.onclick = () => handleDelete(img.src);
+			deleteButton.textContent = 'Delete';
 			// Append the image to the wrapper
 			imageWrapper.appendChild(img);
+			imageWrapper.appendChild(deleteButton);
 
 			// Append the wrapper to the image container
 			imageContainer.appendChild(imageWrapper);
 		});
 	} catch (error) {
 		console.error('Error fetching images:', error);
+	}
+}
+
+async function handleDelete(imageUrl) {
+	const confirmDelete = confirm("Are you sure you want to delete this image?");
+	if (!confirmDelete) return;
+
+const filename = imageUrl.split('/').pop();
+
+	try {
+		const response = await fetch(`${filename}`, {
+			method: 'DELETE',
+		});
+
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
+		}
+
+		const imageWrappers = document.querySelectorAll('.image-wrapper');
+		imageWrappers.forEach(wrapper => {
+		const img = wrapper.querySelector('img');
+			if (img && img.src === imageUrl) {
+				wrapper.remove();
+			}
+		});
+		alert('Image deleted successfully');
+		console.log('Image deleted successfully');
+	} catch (error) {
+		alert(`Error deleting image: ${error.message}`);
+		console.error('Error deleting image:', error);
 	}
 }
 
