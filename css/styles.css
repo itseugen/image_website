@@ -58,9 +58,9 @@ body {
 .image-container {
 	/* align-self: center; */
 	display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center;
+	flex-direction: column; /* Stack items vertically */
+	align-items: center; /* Center items horizontally */
+	justify-content: center;
 }
 
 .image-wrapper {
@@ -80,10 +80,74 @@ body {
 	align-items: center;
 	gap: 20px;
 	align-self: center;
+	position: relative;
 }
 
 .image-box {
 	width: 40vw; /* Set the size of each image */
 	height: auto;
 	border-radius: 8px;
+}
+
+
+.modalOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100000000; /* Ensure it's on top */
+}
+.modalImage {
+	max-width: 100%; /* Responsive to the wrapper */
+	max-height: 80vh; /* Limit height to 80% of the viewport height */
+	width: auto; /* Allow width to adjust */
+	/* height: 80vh; */
+	object-fit: contain;
+	border-radius: 8px;
+}
+
+.modalContent {
+    position: relative;
+    max-width: 90%;
+    max-height: 96%;
+	overflow: hidden;
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	background-color: #05193f;
+	border: 6px solid #2692b0;
+	border-radius: 10px;
+}
+
+.deleteButton {
+	background-color: #ff4d4d;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 3px 5px;
+	font-size: 16px;
+	position: absolute;
+	z-index: 10;
+	opacity: 0;
+	transition: opacity 0.3s;
+	top: 10px;
+	right: 7px;
+	display: flex;
+}
+
+.image-wrapper:hover .deleteButton {
+	opacity: 1;
+}
+
+.deleteButton:hover {
+	background-color: #ff1a1a;
 }
