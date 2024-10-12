@@ -8,21 +8,25 @@
 	<link rel="stylesheet" href="fonts/fonts.css">
 	<title>Image site</title>
 </head>
+
 <body>
 	<nav class="navbar">
 		<div class="navbar-left">
 			<a href="#" class="navbar-item">HOME</a>
 		</div>
 		<div class="navbar-right">
-			<button class="upload-button">Upload</button>
+			<!-- <button class="upload-button">Upload</button> -->
+			<div class="drop-zone" id="drop-zone">
+				<input type="file" id="fileInput" accept="image/*" style="display: none;" />
+				<button id="uploadButton" class="upload-button">Select File</button>
+			</div>
 		</div>
 	</nav>
 
-	<div class="image-container" id="image-container">
+	<div class="image-container" id="image-container"></div>
 
-	</div>
-	
 	<script src="js/fetchImage.js"></script>
+	<script src="js/upload.js"></script>
 
 </body>
 
