@@ -2,4 +2,5 @@
 *.log
 
 usrimg/*
+
 !usrimg/placeholder.jpg
