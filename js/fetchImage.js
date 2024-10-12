@@ -29,7 +29,10 @@ async function fetchImages() {
 			const deleteButton = document.createElement('button');
 			deleteButton.className = 'deleteButton';
 			deleteButton.onclick = () => handleDelete(img.src);
-			deleteButton.textContent = 'Delete';
+
+			const icon = document.createElement('i');
+			icon.className = 'fas fa-trash-alt';
+			deleteButton.appendChild(icon);
 			// Append the image to the wrapper
 			imageWrapper.appendChild(img);
 			imageWrapper.appendChild(deleteButton);
