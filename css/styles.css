@@ -61,6 +61,8 @@ body {
 	flex-direction: column; /* Stack items vertically */
 	align-items: center; /* Center items horizontally */
 	justify-content: center;
+	gap: 6px;
+	margin-top: 10px;
 }
 
 .image-wrapper {
@@ -150,4 +152,26 @@ body {
 
 .deleteButton:hover {
 	background-color: #ff1a1a;
+}
+
+.drop-zone {
+	width: 300px;
+	height: 60px;
+	border: 2px dashed #007bff;
+	text-align: center;
+	padding: 20px;
+	margin: auto;
+	border-radius: 10px;
+	transition: background-color 0.3s ease;
+	border: 2px dashed #ccc;
+	padding: 20px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.drop-zone.dragover {
+	background-color: #0a3484;
 }

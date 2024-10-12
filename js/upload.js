@@ -36,7 +36,17 @@ fileInput.addEventListener('change', (e) => {
 
 function displaySelectedFile() {
 	if (selectedFile) {
-		uploadButton.textContent = `Upload ${selectedFile.name}`;
+		const maxLength = 20;
+		const fileName = selectedFile.name;
+		const extension = fileName.split('.').pop();
+		const baseName = fileName.slice(0, fileName.length - extension.length - 1); // Get the base name without extension
+
+		let displayName = fileName;
+
+		if (baseName.length > maxLength) {
+			displayName = baseName.slice(0, maxLength) + '(...)' + extension;
+		}
+		uploadButton.textContent = `Upload ${displayName}`;
 		uploadButton.disabled = false;
 		isFileSelected = true;
 	}
@@ -95,6 +105,6 @@ uploadButton.addEventListener('click', async () => {
 		alert('Image upload failed.');
 	} finally {
 		uploadButton.textContent = 'Select File';
-		uploadButton.disabled = true;
+		uploadButton.disabled = false;
 	}
 });
