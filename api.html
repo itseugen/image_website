@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="fonts/fonts.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<title>Image site</title>
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="navbar-left">
+			<a href="/index.html" class="navbar-item">HOME</a>
+			<a href="/api.html" class="navbar-item">IMGUR</a>
+		</div>
+		<div class="navbar-right">
+			<div class="drop-zone" id="drop-zone">
+				<input type="file" id="fileInput" accept="image/*" style="display: none;" />
+				<button id="uploadButton" class="upload-button">Select File</button>
+			</div>
+		</div>
+	</nav>
+
+	<script src="js/upload.js"></script>
+
+
+	<!-- <div id="giphy-search">
+		<input type="text" id="searchInput" placeholder="Search for GIFs...">
+		<button onclick="searchGifs()">Search</button>
+	</div> -->
+
+	<div class="giphy-search">
+		<input type="text" class="giphy-search-field" id="searchInput" placeholder="Search for GIFs...">
+		<button onclick="searchGifs()" class="giphy-search-button">Search</button>
+		<!-- <button onclick="searchGifs()">Search</button> -->
+	</div>
+
+	<div id="gif-results" class="image-container"></div>
+	<div id="error-message" style="color: red;"></div>
+
+	<div class="modalOverlay" id="imageModal" style="display: none;">
+		<div class="modalContent">
+			<img id="modalImage" class="modalImage" src="" alt="Selected" />
+		</div>
+	</div>
+
+	<script src="js/upload.js"></script>
+	<script src="js/giphyFetch.js"></script>
+	<script src="js/giphyModal.js"></script>
+
+</body>
+
+</html>

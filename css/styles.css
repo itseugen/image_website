@@ -39,7 +39,7 @@ body {
 }
 
 .upload-button {
-	background-color: #05193f;; /* Green */
+	background-color: #05193f;
 	border: none;
 	color: white;
 	padding: 10px 20px;
@@ -107,6 +107,7 @@ body {
 .modalImage {
 	max-width: 100%; /* Responsive to the wrapper */
 	max-height: 80vh; /* Limit height to 80% of the viewport height */
+	min-height: 60vh;
 	width: auto; /* Allow width to adjust */
 	/* height: 80vh; */
 	object-fit: contain;
@@ -174,4 +175,40 @@ body {
 
 .drop-zone.dragover {
 	background-color: #0a3484;
+}
+
+.giphy-search {
+	align-items: center;
+	text-align: center;
+}
+
+.giphy-search-button {
+	background-color: #05193f;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 8px 16px;
+	font-size: 20px;
+	transition: opacity 0.3s;
+	font-weight: bold;
+	font-family: 'Fredoka', sans-serif;
+	cursor: pointer;
+	margin-top: 14px;
+}
+
+.giphy-search-button:hover {
+	background-color: #2692b0;
+}
+
+.giphy-search-field {
+	color: #05193f;
+	border: none;
+	border-radius: 5px;
+	padding: 8px 16px;
+	font-size: 20px;
+	transition: opacity 0.3s;
+	font-family: 'Fredoka', sans-serif;
+	font-weight: bold;
+	margin-top: 14px;
+	cursor: text;
 }
